@@ -1,0 +1,1016 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Dragonfly API</title>
+	<link href="images/favicon-3502c3ca.png" rel="icon" type="image/png" />
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-f15b6407.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-8f5ea5a5.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-40bbe5ce.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#metals" class="toc-h1 toc-link" data-title="Metals">Metals</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-metal-data" class="toc-h2 toc-link" data-title="Get metal data">Get metal data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#stock-exchanges" class="toc-h1 toc-link" data-title="Stock Exchanges">Stock Exchanges</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-stock-exchange-data" class="toc-h2 toc-link" data-title="Get stock exchange data">Get stock exchange data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#oils" class="toc-h1 toc-link" data-title="Oils">Oils</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-oil-data" class="toc-h2 toc-link" data-title="Get oil data">Get oil data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#big-mac-index" class="toc-h1 toc-link" data-title="Big Mac Index">Big Mac Index</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-big-mac-index-data" class="toc-h2 toc-link" data-title="Get big mac index data">Get big mac index data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#pib-monitors" class="toc-h1 toc-link" data-title="PIB Monitors">PIB Monitors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-pib-monitor-data" class="toc-h2 toc-link" data-title="Get pib monitor data">Get pib monitor data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#coffees" class="toc-h1 toc-link" data-title="Coffees">Coffees</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-coffee-data" class="toc-h2 toc-link" data-title="Get coffee data">Get coffee data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#icva" class="toc-h1 toc-link" data-title="ICVA">ICVA</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-icva-data" class="toc-h2 toc-link" data-title="Get icva data">Get icva data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ics-amp-icr" class="toc-h1 toc-link" data-title="ICS &amp; ICR">ICS &amp; ICR</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-ics-amp-icr-data" class="toc-h2 toc-link" data-title="Get ics &amp; icr data">Get ics &amp; icr data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#ipca" class="toc-h1 toc-link" data-title="IPCA">IPCA</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-ipca-data" class="toc-h2 toc-link" data-title="Get IPCA data">Get IPCA data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#savings-report" class="toc-h1 toc-link" data-title="Savings Report">Savings Report</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-savings-report-data" class="toc-h2 toc-link" data-title="Get savings report data">Get savings report data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#steel" class="toc-h1 toc-link" data-title="Steel">Steel</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-steel-data" class="toc-h2 toc-link" data-title="Get steel data">Get steel data</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://www.dragonflyinteligencia.com/' target='_blank'>Dragonfly Inteligência</a></li>
+            <li><a href='https://www.plataformago.dragonflyinteligencia.com/' target='_blank'>Plataforma GO</a></li>
+            <li><br></li>
+            <li><a href='https://github.com/slatedocs/slate' target='_blank'>Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='metals'>Metals</h1><h2 id='get-metal-data'>Get metal data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/metals/?metal=gold&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-20"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07:44:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">1749.6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-19"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">1749.6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves metals data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>metal</td>
+<td>null</td>
+<td>Can be <strong>gold</strong>, <strong>silver</strong>, <strong>copper</strong>, <strong>platinum</strong>, <strong>palladium</strong> and <strong>iron</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='stock-exchanges'>Stock Exchanges</h1><h2 id='get-stock-exchange-data'>Get stock exchange data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/stock_exchanges/?stock=ibovespa&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-19"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DJI       "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">32858.36</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">32858.36</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">32505.07</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">32627.97</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">32627.97</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">8118</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-18"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DJI       "</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">32928.16</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">33227.78</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">32831.25</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">32862.3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">32862.3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4184</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves stock exchanges data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>stock</td>
+<td>null</td>
+<td>Can be <strong>dji</strong>, <strong>ibovespa</strong>, <strong>nikkei_225</strong>, <strong>sep_500</strong> and <strong>sse</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='oils'>Oils</h1><h2 id='get-oil-data'>Get oil data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/oils/?oil=brent&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-19T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brent"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">62.83</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">62.08</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.53</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">61688</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-18T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brent"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">67.93</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">68.15</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">61.42</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">63.28</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">61688</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves oils data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>oil</td>
+<td>null</td>
+<td>Can be <strong>brent</strong> and <strong>crude</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='big-mac-index'>Big Mac Index</h1><h2 id='get-big-mac-index-data'>Get big mac index data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/big_mac/?country=brazil&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"localPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dollarEx"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.5046</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dollarPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.97849071685499</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usdRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.29709</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eurRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.22957</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gbpRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.10348</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jpyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06394</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cnyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15005</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gdpDollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">8751.381</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjustedPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.21778192537769</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usdAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20101</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eurAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06636</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gbpAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.27461</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jpyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.48431</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cnyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.17219</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-01T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"localPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dollarEx"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.34045</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dollarPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.91352788622682</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usdRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.31462</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eurRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.18232</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gbpRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.08505</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jpyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07647</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cnyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.26306</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gdpDollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">8958.576</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adjustedPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.97800388981275</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usdAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1909</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eurAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.16771</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gbpAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.33581</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jpyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.52339</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cnyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2738</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves big mac index data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country</td>
+<td>null</td>
+<td>Can be <strong>brazil</strong>, <strong>usa</strong>, <strong>china</strong>, <strong>australia</strong>, <strong>europe</strong>, <strong>india</strong>, <strong>japan</strong>, <strong>russia</strong> and <strong>hong_kong</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='pib-monitors'>PIB Monitors</h1><h2 id='get-pib-monitor-data'>Get pib monitor data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/pib_monitors/?country=brazil&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4 trim. 2020"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"actual"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"forecast"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.7</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-03"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 trim. 2020"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"actual"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"forecast"</span><span class="p">:</span><span class="w"> </span><span class="mf">-10.4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.7</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves pib monitors data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country</td>
+<td>null</td>
+<td>Can be <strong>brazil</strong>, <strong>usa</strong>, <strong>china</strong>, <strong>germany</strong>, <strong>australia</strong>, <strong>europe</strong>, <strong>south_africa</strong>, <strong>japan</strong>, <strong>united_kingdom</strong> and <strong>hong_kong</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='coffees'>Coffees</h1><h2 id='get-coffee-data'>Get coffee data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/coffees/?coffee=robusta&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-05"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"real"</span><span class="p">:</span><span class="w"> </span><span class="mf">424.72</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.86</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-04"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"real"</span><span class="p">:</span><span class="w"> </span><span class="mf">425.91</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.09</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves coffees data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>coffee</td>
+<td>null</td>
+<td>Can be <strong>arabica</strong> and <strong>robusta</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='icva'>ICVA</h1><h2 id='get-icva-data'>Get icva data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/icva/limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nominalAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-7.199999999999999</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deflated"</span><span class="p">:</span><span class="w"> </span><span class="mf">-17.1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deflatedAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mf">-6.3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nominalAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-3.9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deflated"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deflatedAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-10.3</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves coffees data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='ics-amp-icr'>ICS &amp; ICR</h1><h2 id='get-ics-amp-icr-data'>Get ics &amp; icr data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/ics_icr/?type=ics&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-04"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"estabelecimento"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.1633561908453</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"estabelecimentoImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6334891384894625</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.8166049306892</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volumeImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-20.25847206485667</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valor"</span><span class="p">:</span><span class="w"> </span><span class="mf">90.8975498433553</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valorImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.26485275280212</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"estabelecimento"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.1633561908453</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"estabelecimentoImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6334891384894625</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.8166049306892</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volumeImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-20.25847206485667</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valor"</span><span class="p">:</span><span class="w"> </span><span class="mf">90.8975498433553</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valorImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.26485275280212</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves ICS &amp; ICR data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>null</td>
+<td>Can be <strong>ics</strong> and <strong>icr</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='ipca'>IPCA</h1><h2 id='get-ipca-data'>Get IPCA data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/ipca/?category=indice_geral&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2021</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Índice Geral"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.86</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yearVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.11</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthWeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2021</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Índice Geral"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yearVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"monthWeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves IPCA data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category</td>
+<td>null</td>
+<td>Can be <strong>indice_geral</strong>, <strong>alimentacao_e_bebidas</strong>, <strong>artigos_de_residencia</strong>, <strong>comunicacao</strong>, <strong>despesas_pessoais</strong>, <strong>educacao</strong>, <strong>habitacao</strong>, <strong>saude_e_cuidados_pessoais</strong>, <strong>transportes</strong>, and <strong>vestuario</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='savings-report'>Savings Report</h1><h2 id='get-savings-report-data'>Get savings report data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/savings_report/?limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-05"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="mi">19799674</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"withdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">14751008</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netCapital"</span><span class="p">:</span><span class="w"> </span><span class="mi">5048666</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yield"</span><span class="p">:</span><span class="w"> </span><span class="mi">67806</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1023766185</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-04"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="mi">12579733</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"withdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">10710888</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"netCapital"</span><span class="p">:</span><span class="w"> </span><span class="mi">1868845</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"yield"</span><span class="p">:</span><span class="w"> </span><span class="mi">67904</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1018649712</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves savings report data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+<h1 id='steel'>Steel</h1><h2 id='get-steel-data'>Get steel data</h2>
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/steel/?limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"production"</span><span class="p">:</span><span class="w"> </span><span class="mi">7700523</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domesticSales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1882947</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"foreignMarket"</span><span class="p">:</span><span class="w"> </span><span class="mi">657043</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exports"</span><span class="p">:</span><span class="w"> </span><span class="mi">765572</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">333870</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"apparentConsumption"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125371</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"production"</span><span class="p">:</span><span class="w"> </span><span class="mi">8220748</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domesticSales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1923804</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"foreignMarket"</span><span class="p">:</span><span class="w"> </span><span class="mi">565529</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exports"</span><span class="p">:</span><span class="w"> </span><span class="mi">531149</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">324474</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"apparentConsumption"</span><span class="p">:</span><span class="w"> </span><span class="mi">2211070</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves steel data.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
