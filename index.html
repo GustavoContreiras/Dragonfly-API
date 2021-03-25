@@ -314,6 +314,14 @@
               </ul>
           </li>
           <li>
+            <a href="#covid-stats" class="toc-h1 toc-link" data-title="Covid Stats">Covid Stats</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-covid-stats-data" class="toc-h2 toc-link" data-title="Get covid stats data">Get covid stats data</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#stock-exchanges" class="toc-h1 toc-link" data-title="Stock Exchanges">Stock Exchanges</a>
               <ul class="toc-list-h2">
                   <li>
@@ -357,7 +365,7 @@
             <a href="#icva" class="toc-h1 toc-link" data-title="ICVA">ICVA</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-icva-data" class="toc-h2 toc-link" data-title="Get icva data">Get icva data</a>
+                    <a href="#get-icva-data" class="toc-h2 toc-link" data-title="Get ICVA data">Get ICVA data</a>
                   </li>
               </ul>
           </li>
@@ -365,7 +373,7 @@
             <a href="#ics-amp-icr" class="toc-h1 toc-link" data-title="ICS &amp; ICR">ICS &amp; ICR</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-ics-amp-icr-data" class="toc-h2 toc-link" data-title="Get ics &amp; icr data">Get ics &amp; icr data</a>
+                    <a href="#get-ics-amp-icr-data" class="toc-h2 toc-link" data-title="Get ICS &amp; ICR data">Get ICS &amp; ICR data</a>
                   </li>
               </ul>
           </li>
@@ -393,6 +401,9 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li><a href='https://www.dragonflyinteligencia.com/' target='_blank'>Dragonfly Inteligência</a></li>
@@ -405,10 +416,12 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='metals'>Metals</h1><h2 id='get-metal-data'>Get metal data</h2>
+<p>This endpoint retrieves metals data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/metals/?metal=gold&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/metals/?metal=gold&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -418,27 +431,28 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-20"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07:44:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">1749.6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-19"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">1749.6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-25"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"06:25:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">1731.47</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">1736.7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves metals data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -449,19 +463,26 @@
 <tr>
 <td>metal</td>
 <td>null</td>
-<td>Can be <strong>gold</strong>, <strong>silver</strong>, <strong>copper</strong>, <strong>platinum</strong>, <strong>palladium</strong> and <strong>iron</strong>.</td>
+<td>Can be <strong>gold</strong>, <strong>silver</strong>, <strong>copper</strong>, <strong>platinum</strong>, <strong>palladium</strong> or <strong>iron</strong>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
+</tr>
 </tbody></table>
-<h1 id='stock-exchanges'>Stock Exchanges</h1><h2 id='get-stock-exchange-data'>Get stock exchange data</h2>
+<h1 id='covid-stats'>Covid Stats</h1><h2 id='get-covid-stats-data'>Get covid stats data</h2>
+<p>This endpoint retrieves covid data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/stock_exchanges/?stock=ibovespa&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/covid_stats/?country=brazil&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -471,33 +492,95 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-19"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DJI       "</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">32858.36</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">32858.36</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">32505.07</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">32627.97</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"adjClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">32627.97</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">8118</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-18"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DJI       "</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">32928.16</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">33227.78</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">32831.25</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">32862.3</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"adjClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">32862.3</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4184</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="mi">12220011</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deaths"</span><span class="p">:</span><span class="w"> </span><span class="mi">300685</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"recovered"</span><span class="p">:</span><span class="w"> </span><span class="mi">10750131</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="mi">1169195</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-23"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"confirmed"</span><span class="p">:</span><span class="w"> </span><span class="mi">12130019</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deaths"</span><span class="p">:</span><span class="w"> </span><span class="mi">298676</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"recovered"</span><span class="p">:</span><span class="w"> </span><span class="mi">10665161</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="mi">1166182</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>country</td>
+<td>null</td>
+<td>Can be <strong>brazil</strong>, <strong>usa</strong>, <strong>china</strong>, <strong>italy</strong>, <strong>portugal</strong>, <strong>france</strong>, <strong>india</strong>, <strong>germany</strong>, <strong>japan</strong> or <strong>russia</strong>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>null</td>
+<td>How many results should be returned. If null returns all.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
+</tr>
+</tbody></table>
+<h1 id='stock-exchanges'>Stock Exchanges</h1><h2 id='get-stock-exchange-data'>Get stock exchange data</h2>
 <p>This endpoint retrieves stock exchanges data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
+
+<blockquote>
+<p>Exemplo Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/stock_exchanges/?stock=dji&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span> <span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Exemplo Resposta</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DJI       "</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">32470.88</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">32787.99</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">32418.15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">32420.06</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"adjClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">32420.06</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">3993</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-23"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"stock"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DJI       "</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">32691.5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">32753.77</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">32356.28</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">32423.15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"adjClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">32423.15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">3858</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -508,19 +591,26 @@
 <tr>
 <td>stock</td>
 <td>null</td>
-<td>Can be <strong>dji</strong>, <strong>ibovespa</strong>, <strong>nikkei_225</strong>, <strong>sep_500</strong> and <strong>sse</strong>.</td>
+<td>Can be <strong>dji</strong>, <strong>ibovespa</strong>, <strong>nikkei_225</strong>, <strong>sep_500</strong> or <strong>sse</strong>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
+</tr>
 </tbody></table>
 <h1 id='oils'>Oils</h1><h2 id='get-oil-data'>Get oil data</h2>
+<p>This endpoint retrieves oils data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/oils/?oil=brent&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/oils/?oil=brent&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -530,29 +620,30 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-19T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brent"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">62.83</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.9</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">62.08</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.53</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">61688</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-18T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brent"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">67.93</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">68.15</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">61.42</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">63.28</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">61688</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-25T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brent"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">62.99</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">63.67</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">5564</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-24T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"oil"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brent"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">60.35</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.56</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">60.34</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">64.41</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">43200</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves oils data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -563,19 +654,26 @@
 <tr>
 <td>oil</td>
 <td>null</td>
-<td>Can be <strong>brent</strong> and <strong>crude</strong>.</td>
+<td>Can be <strong>brent</strong> or <strong>crude</strong>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
 </tr>
 </tbody></table>
 <h1 id='big-mac-index'>Big Mac Index</h1><h2 id='get-big-mac-index-data'>Get big mac index data</h2>
+<p>This endpoint retrieves big mac index data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/big_mac/?country=brazil&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/big_mac/?country=brazil&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -585,53 +683,54 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"localPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.9</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dollarEx"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.5046</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dollarPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.97849071685499</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"usdRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.29709</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"eurRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.22957</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"gbpRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.10348</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"jpyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06394</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cnyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15005</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"gdpDollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">8751.381</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"adjustedPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.21778192537769</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"usdAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20101</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"eurAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06636</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"gbpAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.27461</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"jpyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.48431</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cnyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.17219</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"localPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.9</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dollarEx"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.34045</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dollarPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.91352788622682</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"usdRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.31462</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"eurRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.18232</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"gbpRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.08505</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"jpyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07647</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cnyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.26306</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"gdpDollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">8958.576</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"adjustedPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.97800388981275</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"usdAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1909</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"eurAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.16771</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"gbpAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.33581</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"jpyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.52339</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cnyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2738</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"localPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dollarEx"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.5046</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dollarPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.97849071685499</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"usdRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.29709</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eurRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.22957</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gbpRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.10348</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"jpyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06394</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cnyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15005</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gdpDollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">8751.381</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"adjustedPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.21778192537769</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"usdAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20101</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eurAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.06636</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gbpAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.27461</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"jpyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.48431</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cnyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.17219</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-01T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currencyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"localPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dollarEx"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.34045</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dollarPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.91352788622682</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"usdRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.31462</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eurRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.18232</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gbpRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.08505</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"jpyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.07647</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cnyRaw"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.26306</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gdpDollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">8958.576</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"adjustedPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.97800388981275</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"usdAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1909</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eurAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.16771</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"gbpAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.33581</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"jpyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.52339</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cnyAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2738</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves big mac index data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -642,19 +741,26 @@
 <tr>
 <td>country</td>
 <td>null</td>
-<td>Can be <strong>brazil</strong>, <strong>usa</strong>, <strong>china</strong>, <strong>australia</strong>, <strong>europe</strong>, <strong>india</strong>, <strong>japan</strong>, <strong>russia</strong> and <strong>hong_kong</strong>.</td>
+<td>Can be <strong>brazil</strong>, <strong>usa</strong>, <strong>china</strong>, <strong>australia</strong>, <strong>europe</strong>, <strong>india</strong>, <strong>japan</strong>, <strong>russia</strong> or <strong>hong_kong</strong>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
 </tr>
 </tbody></table>
 <h1 id='pib-monitors'>PIB Monitors</h1><h2 id='get-pib-monitor-data'>Get pib monitor data</h2>
+<p>This endpoint retrieves pib monitors data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/pib_monitors/?country=brazil&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/pib_monitors/?country=brazil&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -664,27 +770,28 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4 trim. 2020"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"actual"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"forecast"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-03"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 trim. 2020"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"actual"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.7</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"forecast"</span><span class="p">:</span><span class="w"> </span><span class="mf">-10.4</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.7</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4 trim. 2020"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actual"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"forecast"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.7</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brasil"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-03"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 trim. 2020"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"actual"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"forecast"</span><span class="p">:</span><span class="w"> </span><span class="mf">-10.4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"previous"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.7</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves pib monitors data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -695,19 +802,26 @@
 <tr>
 <td>country</td>
 <td>null</td>
-<td>Can be <strong>brazil</strong>, <strong>usa</strong>, <strong>china</strong>, <strong>germany</strong>, <strong>australia</strong>, <strong>europe</strong>, <strong>south_africa</strong>, <strong>japan</strong>, <strong>united_kingdom</strong> and <strong>hong_kong</strong>.</td>
+<td>Can be <strong>brazil</strong>, <strong>usa</strong>, <strong>china</strong>, <strong>germany</strong>, <strong>australia</strong>, <strong>europe</strong>, <strong>south_africa</strong>, <strong>japan</strong>, <strong>united_kingdom</strong> or <strong>hong_kong</strong>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
+</tr>
 </tbody></table>
 <h1 id='coffees'>Coffees</h1><h2 id='get-coffee-data'>Get coffee data</h2>
+<p>This endpoint retrieves coffees data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/coffees/?coffee=robusta&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/coffees/?coffee=robusta&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -717,21 +831,22 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-05"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"real"</span><span class="p">:</span><span class="w"> </span><span class="mf">424.72</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.86</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-04"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"real"</span><span class="p">:</span><span class="w"> </span><span class="mf">425.91</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"dollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.09</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-05"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"real"</span><span class="p">:</span><span class="w"> </span><span class="mf">424.72</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.86</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"real"</span><span class="p">:</span><span class="w"> </span><span class="mf">425.91</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dollar"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.09</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves coffees data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -742,19 +857,26 @@
 <tr>
 <td>coffee</td>
 <td>null</td>
-<td>Can be <strong>arabica</strong> and <strong>robusta</strong>.</td>
+<td>Can be <strong>arabica</strong> or <strong>robusta</strong>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
+</tr>
 </tbody></table>
-<h1 id='icva'>ICVA</h1><h2 id='get-icva-data'>Get icva data</h2>
+<h1 id='icva'>ICVA</h1><h2 id='get-icva-data'>Get ICVA data</h2>
+<p>This endpoint retrieves ICVA data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/icva/limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/icva/limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -764,25 +886,26 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.9</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nominalAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-7.199999999999999</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deflated"</span><span class="p">:</span><span class="w"> </span><span class="mf">-17.1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deflatedAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.1</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mf">-6.3</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"nominalAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-3.9</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deflated"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deflatedAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-10.3</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9.9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nominalAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-7.199999999999999</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deflated"</span><span class="p">:</span><span class="w"> </span><span class="mf">-17.1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deflatedAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nominal"</span><span class="p">:</span><span class="w"> </span><span class="mf">-6.3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nominalAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-3.9</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deflated"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deflatedAdjusted"</span><span class="p">:</span><span class="w"> </span><span class="mf">-10.3</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves coffees data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -795,12 +918,19 @@
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
+</tr>
 </tbody></table>
-<h1 id='ics-amp-icr'>ICS &amp; ICR</h1><h2 id='get-ics-amp-icr-data'>Get ics &amp; icr data</h2>
+<h1 id='ics-amp-icr'>ICS &amp; ICR</h1><h2 id='get-ics-amp-icr-data'>Get ICS &amp; ICR data</h2>
+<p>This endpoint retrieves ICS &amp; ICR data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/ics_icr/?type=ics&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/ics_icr/?type=ics&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -810,31 +940,32 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-04"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ics"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"estabelecimento"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.1633561908453</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"estabelecimentoImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6334891384894625</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.8166049306892</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volumeImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-20.25847206485667</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"valor"</span><span class="p">:</span><span class="w"> </span><span class="mf">90.8975498433553</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"valorImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.26485275280212</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ics"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"estabelecimento"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.1633561908453</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"estabelecimentoImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6334891384894625</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.8166049306892</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"volumeImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-20.25847206485667</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"valor"</span><span class="p">:</span><span class="w"> </span><span class="mf">90.8975498433553</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"valorImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.26485275280212</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-04"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"estabelecimento"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.1633561908453</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"estabelecimentoImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6334891384894625</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.8166049306892</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volumeImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-20.25847206485667</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valor"</span><span class="p">:</span><span class="w"> </span><span class="mf">90.8975498433553</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valorImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.26485275280212</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-03"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"estabelecimento"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.1633561908453</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"estabelecimentoImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6334891384894625</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">78.8166049306892</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volumeImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-20.25847206485667</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valor"</span><span class="p">:</span><span class="w"> </span><span class="mf">90.8975498433553</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valorImpact"</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.26485275280212</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves ICS &amp; ICR data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -845,19 +976,26 @@
 <tr>
 <td>type</td>
 <td>null</td>
-<td>Can be <strong>ics</strong> and <strong>icr</strong>.</td>
+<td>Can be <strong>ics</strong> or <strong>icr</strong>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
+</tr>
 </tbody></table>
 <h1 id='ipca'>IPCA</h1><h2 id='get-ipca-data'>Get IPCA data</h2>
+<p>This endpoint retrieves IPCA data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/ipca/?category=indice_geral&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/ipca/?category=indice_geral&amp;limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -867,27 +1005,28 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2021</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Índice Geral"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"monthVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.86</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"yearVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.11</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"monthWeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2021</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Índice Geral"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"monthVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"yearVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"monthWeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2021</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Índice Geral"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"monthVariation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yearVariation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"monthWeight"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2021</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"month"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Índice Geral"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"monthVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yearVariation"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"monthWeight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves IPCA data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -898,19 +1037,26 @@
 <tr>
 <td>category</td>
 <td>null</td>
-<td>Can be <strong>indice_geral</strong>, <strong>alimentacao_e_bebidas</strong>, <strong>artigos_de_residencia</strong>, <strong>comunicacao</strong>, <strong>despesas_pessoais</strong>, <strong>educacao</strong>, <strong>habitacao</strong>, <strong>saude_e_cuidados_pessoais</strong>, <strong>transportes</strong>, and <strong>vestuario</strong>.</td>
+<td>Can be <strong>indice_geral</strong>, <strong>alimentacao_e_bebidas</strong>, <strong>artigos_de_residencia</strong>, <strong>comunicacao</strong>, <strong>despesas_pessoais</strong>, <strong>educacao</strong>, <strong>habitacao</strong>, <strong>saude_e_cuidados_pessoais</strong>, <strong>transportes</strong> or <strong>vestuario</strong>.</td>
 </tr>
 <tr>
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
 </tr>
 </tbody></table>
 <h1 id='savings-report'>Savings Report</h1><h2 id='get-savings-report-data'>Get savings report data</h2>
+<p>This endpoint retrieves savings report data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/savings_report/?limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/savings_report/?limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -920,27 +1066,28 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-05"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="mi">19799674</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"withdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">14751008</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"netCapital"</span><span class="p">:</span><span class="w"> </span><span class="mi">5048666</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"yield"</span><span class="p">:</span><span class="w"> </span><span class="mi">67806</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1023766185</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-04"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="mi">12579733</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"withdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">10710888</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"netCapital"</span><span class="p">:</span><span class="w"> </span><span class="mi">1868845</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"yield"</span><span class="p">:</span><span class="w"> </span><span class="mi">67904</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1018649712</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-18"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="mi">7831461</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"withdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">8612846</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"netCapital"</span><span class="p">:</span><span class="w"> </span><span class="mi">-781385</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yield"</span><span class="p">:</span><span class="w"> </span><span class="mi">50565</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1011003860</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-17"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deposit"</span><span class="p">:</span><span class="w"> </span><span class="mi">8037367</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"withdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">9224633</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"netCapital"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1187266</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yield"</span><span class="p">:</span><span class="w"> </span><span class="mi">48901</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1011734679</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves savings report data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -952,13 +1099,20 @@
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
 </tr>
 </tbody></table>
 <h1 id='steel'>Steel</h1><h2 id='get-steel-data'>Get steel data</h2>
+<p>This endpoint retrieves steel data.</p>
+
 <blockquote>
 <p>Exemplo Request</p>
 </blockquote>
-<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/indicators/steel/?limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">fetch</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://www.plataformago.dragonflyinteligencia.com/api/steel/?limit=2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">method</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span>
   <span class="dl">"</span><span class="s2">headers</span><span class="dl">"</span><span class="p">:</span> <span class="p">{}</span>
 <span class="p">})</span>
@@ -968,29 +1122,74 @@
 <blockquote>
 <p>Exemplo Resposta</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"production"</span><span class="p">:</span><span class="w"> </span><span class="mi">7700523</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"domesticSales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1882947</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"foreignMarket"</span><span class="p">:</span><span class="w"> </span><span class="mi">657043</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"exports"</span><span class="p">:</span><span class="w"> </span><span class="mi">765572</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">333870</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"apparentConsumption"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125371</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"production"</span><span class="p">:</span><span class="w"> </span><span class="mi">8220748</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"domesticSales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1923804</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"foreignMarket"</span><span class="p">:</span><span class="w"> </span><span class="mi">565529</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"exports"</span><span class="p">:</span><span class="w"> </span><span class="mi">531149</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">324474</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"apparentConsumption"</span><span class="p">:</span><span class="w"> </span><span class="mi">2211070</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-01"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"production"</span><span class="p">:</span><span class="w"> </span><span class="mi">7700523</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1211463</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">838785</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionSemifinishedSlab"</span><span class="p">:</span><span class="w"> </span><span class="mi">537701</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionSemifinishedIngotBloomBillet"</span><span class="p">:</span><span class="w"> </span><span class="mi">19243</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionPigIron"</span><span class="p">:</span><span class="w"> </span><span class="mi">2248147</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1882947</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSalesRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1090464</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSalesRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">756890</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSalesSemifinishedSlab"</span><span class="p">:</span><span class="w"> </span><span class="mi">13147</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSalesSemifinishedIngotBloomBillet"</span><span class="p">:</span><span class="w"> </span><span class="mi">22446</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarket"</span><span class="p">:</span><span class="w"> </span><span class="mi">657043</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarketRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">79576</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarketRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">61060</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarketSemifinishedSlab"</span><span class="p">:</span><span class="w"> </span><span class="mi">513623</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarketSemifinishedIngotBloomBillet"</span><span class="p">:</span><span class="w"> </span><span class="mi">2784</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exports"</span><span class="p">:</span><span class="w"> </span><span class="mi">765572</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exportsRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">58394</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exportsRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">89533</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exportsSemifinishedSlab"</span><span class="p">:</span><span class="w"> </span><span class="mi">617598</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exportsSemifinishedIngotBloomBillet"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">333870</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"importsRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">133079</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"importsRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">102509</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"importsSemifinished"</span><span class="p">:</span><span class="w"> </span><span class="mi">333870</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"apparentConsumption"</span><span class="p">:</span><span class="w"> </span><span class="mi">2125371</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"apparentConsumptionFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1237750</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"apparentConsumptionLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">887621</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-01"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"production"</span><span class="p">:</span><span class="w"> </span><span class="mi">8220748</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1293969</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">872758</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionSemifinishedSlab"</span><span class="p">:</span><span class="w"> </span><span class="mi">596597</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionSemifinishedIngotBloomBillet"</span><span class="p">:</span><span class="w"> </span><span class="mi">24384</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"productionPigIron"</span><span class="p">:</span><span class="w"> </span><span class="mi">2429518</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSales"</span><span class="p">:</span><span class="w"> </span><span class="mi">1923804</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSalesRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1134115</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSalesRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">760218</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSalesSemifinishedSlab"</span><span class="p">:</span><span class="w"> </span><span class="mi">8502</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"domesticSalesSemifinishedIngotBloomBillet"</span><span class="p">:</span><span class="w"> </span><span class="mi">20969</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarket"</span><span class="p">:</span><span class="w"> </span><span class="mi">565529</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarketRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">56711</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarketRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">73213</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarketSemifinishedSlab"</span><span class="p">:</span><span class="w"> </span><span class="mi">433273</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"foreignMarketSemifinishedIngotBloomBillet"</span><span class="p">:</span><span class="w"> </span><span class="mi">2332</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exports"</span><span class="p">:</span><span class="w"> </span><span class="mi">531149</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exportsRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">45998</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exportsRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">119227</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exportsSemifinishedSlab"</span><span class="p">:</span><span class="w"> </span><span class="mi">363490</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"exportsSemifinishedIngotBloomBillet"</span><span class="p">:</span><span class="w"> </span><span class="mi">2434</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"imports"</span><span class="p">:</span><span class="w"> </span><span class="mi">324474</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"importsRolledFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">200906</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"importsRolledLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">74515</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"importsSemifinished"</span><span class="p">:</span><span class="w"> </span><span class="mi">324474</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"apparentConsumption"</span><span class="p">:</span><span class="w"> </span><span class="mi">2211070</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"apparentConsumptionFlat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1344807</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"apparentConsumptionLong"</span><span class="p">:</span><span class="w"> </span><span class="mi">866263</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves steel data.</p>
-<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -1002,6 +1201,29 @@
 <td>limit</td>
 <td>null</td>
 <td>How many results should be returned. If null returns all.</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>null</td>
+<td>How many results should be skiped. If null skips 0.</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Dragonfly API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>4xx</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
 </tr>
 </tbody></table>
 
